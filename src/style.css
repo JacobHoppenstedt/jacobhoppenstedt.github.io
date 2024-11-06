@@ -203,8 +203,8 @@ span {
 .typing-text span {
     position: relative;
     color: #64a0ff;
-    opacity: 1; /* Start visible */
-    transition: opacity 1s ease-in-out; /* Slower transition */
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 
@@ -261,12 +261,12 @@ span {
 .home .home-content p, 
 .home .social-icons, 
 .home .btn {
-    opacity: 0; /* Start hidden */
-    animation: fadeIn 1.5s ease-in-out forwards; /* Use fadeIn animation */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 .home .home-img {
-    animation-delay: 0.3s; /* Slightly earlier to bring attention to the image */
+    animation-delay: 0.3s;
 }
 .home .home-content h1 {
     animation-delay: 0.25s;
