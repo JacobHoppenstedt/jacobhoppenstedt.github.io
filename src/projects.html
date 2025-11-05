@@ -1,46 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Projects</title>
+  <style>
+    .section-label {
+      font-size: 1.8rem;
+      color: #e0e7ff;
+      text-transform: uppercase;
+      letter-spacing: 0.15rem;
+      text-align: center;
+      margin: 4rem 0 1rem;
+      opacity: 0.9;
+    }
+    .ribbon {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 1.2rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 0.4rem;
+      color: #64a0ff;
+      background-color: rgba(100,160,255,0.12);
+      border: 1px solid #64a0ff;
+      box-shadow: 0 0 15px rgba(100,160,255,0.15);
+    }
+    .project { position: relative; }
+  </style>
 </head>
 <body>
-    <header>
-        <a href="../index.html" class="logo">Jacob Hoppenstedt</a>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="projects.html" class="active">Projects</a>
-            <a href="resume.html">Resume</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <a href="../index.html" class="logo">Jacob Hoppenstedt</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </header>
 
-    <section class="projects">
-        <h1 class="page-title">My Projects</h1>
-        <p class="page-description">Here are some of my favorite projects showcasing my skills and creativity.</p>
-        
-        <div class="project-list">
-            <div class="project">
-                <img src="../imgs/prifiteerreadme.png" alt="Financial Analytics Platform" class="project-img">
-                <h2>Profiteer</h2>
-                <p>Visualize your spending history like never before! This MERN stack app lets you set and track savings goals, making budgeting fun and interactive.</p>
-                <a href="https://www.github.com/Drewski2222/Profiteer" target="_blank" class="btn">View on GitHub</a>
-            </div>
-            <div class="project">
-                <img src="../imgs/imhungry.JPG" alt="Meal Planner App" class="project-img">
-                <h2>ImHungry</h2>
-                <p>No more "what’s for dinner?" dilemmas! With over 10,000 recipes, this app suggests meal ideas based on your ingredients, promoting healthy home-cooked meals.</p>
-                <a href="https://www.github.com/JacobHoppenstedt/ImHungry" target="_blank" class="btn">View on GitHub</a>
-            </div>
-            <div class="project">
-                <img src="../imgs/sweatsmart.png" alt="AI Workout Planner" class="project-img">
-                <h2>Sweat Smart</h2>
-                <p>Get fit with custom workout plans! This app uses ChatGPT to personalize routines for you and stores your data with Firebase for easy access.</p>
-                <a href="https://www.github.com/d-dovale/Sweat-Smart" target="_blank" class="btn">View on GitHub</a>
-            </div>
-        </div>
-    </section>
+  <section class="projects" aria-labelledby="projects-title">
+    <h1 id="projects-title" class="page-title">My Projects</h1>
+    <p class="page-description">Newest, resume‑aligned work first. Earlier projects are preserved below.</p>
+
+    <h2 class="section-label">Featured</h2>
+    <div class="project-list" role="list">
+      <div class="project" role="listitem">
+        <img src="../imgs/NormalWeather_Logo.png" alt="Gameplay screenshot from the earthquake-preparedness survival game built in Godot" class="project-img" />
+        <h2>Earthquake‑Preparedness Game (Normal Weather)</h2>
+        <p>
+          Choice‑driven survival game that teaches earthquake preparedness. Built in Godot (C#), shipped for Web &amp; desktop.
+          Implemented gameplay state machines, physics/collision, inventory, HUD, and optimized a heavy scene to improve average FPS by ~25%.
+        </p>
+        <a href="https://github.com/JonKissil/NormalWeather" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+      </div>
+
+      <div class="project" role="listitem">
+        <img src="../imgs/prifiteerreadme.png" alt="Charts and spending visualizations from the Profiteer budgeting app" class="project-img" />
+        <h2>Financial Analytics Platform (Profiteer)</h2>
+        <p>
+          MERN stack financial analytics app that visualizes spending history and savings goals. Led front‑end improvements with JavaScript and D3;
+          coordinated Scrum ceremonies to drive collaboration and delivery.
+        </p>
+        <a href="https://www.github.com/Drewski2222/Profiteer" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+      </div>
+    </div>
+
+    <h2 class="section-label">Project Archive</h2>
+    <div class="project-list" role="list">
+      <div class="project" role="listitem">
+        <span class="ribbon" aria-hidden="true">Archived</span>
+        <img src="../imgs/imhungry.JPG" alt="Recipe suggestion interface from the ImHungry app" class="project-img" />
+        <h2>ImHungry</h2>
+        <p>
+          Recipe discovery app with 10k+ recipes and ingredient‑based suggestions to support healthy home‑cooked meals.
+        </p>
+        <a href="https://www.github.com/JacobHoppenstedt/ImHungry" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+      </div>
+
+      <div class="project" role="listitem">
+        <span class="ribbon" aria-hidden="true">Archived</span>
+        <img src="../imgs/sweatsmart.png" alt="Workout planning UI from the Sweat Smart app" class="project-img" />
+        <h2>Sweat Smart</h2>
+        <p>
+          Workout planner that uses a chat assistant to personalize routines and stores user data with Firebase.
+        </p>
+        <a href="https://www.github.com/d-dovale/Sweat-Smart" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+  <footer style="padding:2rem 9%; text-align:center; color:#e0e7ff;">
+  <p style="font-size:1.6rem;">
+    Reach me at
+    <a href="mailto:jacobhoppenstedt@gmail.com?subject=Hi%20Jacob%20—%20from%20your%20portfolio"
+       style="color:#64a0ff;">jacobhoppenstedt@gmail.com</a>
+  </p>
+  <p style="font-size:1.4rem; opacity:.85; margin-top:.5rem;">
+    Or connect on
+    <a href="https://www.linkedin.com/in/jacob-hoppenstedt" style="color:#64a0ff;">LinkedIn</a>
+    ·
+    <a href="https://github.com/JacobHoppenstedt" style="color:#64a0ff;">GitHub</a>
+  </p>
+</footer>
+
 </body>
 </html>
