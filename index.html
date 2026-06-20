@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="src/style.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <title>Portfolio Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jacob Hoppenstedt portfolio website" />
+  <title>Jacob Hoppenstedt | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="src/style.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="src/portfolio.js" defer></script>
+  <script src="src/particles-config.js" defer></script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <header>
-        <a href="index.html" class="logo">Jacob Hoppenstedt</a>
+  <div id="particles-js" aria-hidden="true"></div>
 
-        <nav>
-            <a href="index.html" class="active"> Home</a>
-            <a href="src/projects.html" >Projects</a>
-            <a href="src/resume.html" >Resume</a>
-        </nav>
-    </header>
+  <header>
+    <a href="index.html" class="logo">Jacob Hoppenstedt</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="src/projects.html">Projects</a>
+      <a href="src/resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <main>
     <section class="home">
-        <div class="home-img">
-            <img src="imgs/1709997612740.jfif" alt="">
+      <div class="home-glow" aria-hidden="true"></div>
+
+<div class="home-img reveal">
+  <div class="home-img-inner">
+    <img src="imgs/1709997612740.jfif" alt="Portrait of Jacob Hoppenstedt" />
+  </div>
+</div>
+
+      <div class="home-content">
+        <p class="eyebrow">Portfolio / Software Engineer</p>
+        <h1>Hi, I'm <span>Jacob</span></h1>
+        <h3 class="typing-text">I'm a <span></span></h3>
+        <p>I'm a cross-platform web and app designer with a passion for making impactful technology.</p>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/jacob-hoppenstedt/" aria-label="LinkedIn profile">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://www.github.com/JacobHoppenstedt/" aria-label="GitHub profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
-        <div class="home-content">
-            <h1>Hi, I'm <span>Jacob</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>I'm a cross-platform web and app designer with a passion for making impactful technology.</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/jacob-hoppenstedt/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.github.com/JacobHoppenstedt/"><i class="fa-brands fa-github"></i></a>
-            </div>
-            <a href="src/projects.html" class="btn">My Projects</a>
-        </div>
+
+        <a href="src/projects.html" class="btn">My Projects</a>
+      </div>
     </section>
-    <script>
-        // JS code for home cycle animation
-        const words = ["Software Engineer", "Digital Innovator", "Web Designer"];
-        let index = 0;
-        const typingText = document.querySelector(".typing-text span");
-    
-        // Set the initial word and make it visible
-        typingText.textContent = words[index];
-    
-        function changeWord() {
-            // Fade out current word
-            typingText.style.opacity = 0;
-            
-            // Change text after fade out
-            setTimeout(() => {
-                index = (index + 1) % words.length;
-                typingText.textContent = words[index];
-                typingText.style.opacity = 1;
-            }, 1000);
-        }
-    
-        // Run the changeWord function every 3.5 seconds
-        setInterval(changeWord, 3500);
-    </script>
-    
-<script src="src/particles-config.js"></script>
+  </main>
 </body>
 </html>

@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jacob Hoppenstedt resume" />
+  <title>Resume | Jacob Hoppenstedt</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="portfolio.js" defer></script>
 </head>
 <body>
-    <header>
-        <a href="../index.html" class="logo">Jacob Hoppenstedt</a>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="resume.html" class="active">Resume</a>
-        </nav>
-    </header>
+  <div class="page-bg" aria-hidden="true"></div>
 
-    <section class="resume">
-        <h1 class="page-title">My Resume</h1>
-        <div class="resume-container">
-            <iframe src="../imgs/JacobHoppenstedt_resume.pdf" class="resume-viewer" frameborder="0"></iframe> <!-- Inline PDF Viewer -->
-            <a href="../imgs/JacobHoppenstedt_resume.pdf" download="../imgs/JacobHoppenstedt_resume.pdf" class="btn download-btn">Download Resume</a>
-        </div>
+  <header>
+    <a href="../index.html" class="logo">Jacob Hoppenstedt</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html" class="active">Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="resume-page" aria-labelledby="resume-title">
+      <div class="resume-hero hero">
+        <h1 id="resume-title" class="page-title">My Resume</h1>
+        <p class="page-description">
+          A quick view of my latest experience, education, and technical background.
+        </p>
+      </div>
+<div class="resume-shell reveal">
+<div class="resume-topline">
+  <p class="resume-label">
+    Preview the resume below or download a PDF copy for later.
+  </p>
+
+  <div class="resume-actions">
+    <a href="../imgs/Hoppenstedt_resume.pdf"
+       download="JacobHoppenstedt_resume.pdf"
+       class="btn">
+      Download Resume
+    </a>
+  </div>
+</div>
+
+        <iframe
+          src="../imgs/Hoppenstedt_resume.pdf"
+          title="Jacob Hoppenstedt resume PDF"
+          class="resume-viewer"
+          frameborder="0"
+        ></iframe>
+</div>
     </section>
-    <footer style="padding:2rem 9%; text-align:center; color:#e0e7ff;">
-  <p style="font-size:1.6rem;">
-    Reach me at
-    <a href="mailto:jacobhoppenstedt@gmail.com?subject=Hi%20Jacob%20—%20from%20your%20portfolio"
-       style="color:#64a0ff;">jacobhoppenstedt@gmail.com</a>
-  </p>
-  <p style="font-size:1.4rem; opacity:.85; margin-top:.5rem;">
-    Or connect on
-    <a href="https://www.linkedin.com/in/jacob-hoppenstedt" style="color:#64a0ff;">LinkedIn</a>
-    ·
-    <a href="https://github.com/JacobHoppenstedt" style="color:#64a0ff;">GitHub</a>
-  </p>
-</footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Reach me at
+      <a href="mailto:jacobhoppenstedt@gmail.com?subject=Hi%20Jacob%20—%20from%20your%20portfolio">jacobhoppenstedt@gmail.com</a>
+    </p>
+    <p>
+      Or connect on
+      <a href="https://www.linkedin.com/in/jacob-hoppenstedt">LinkedIn</a>
+      ·
+      <a href="https://github.com/JacobHoppenstedt">GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>
