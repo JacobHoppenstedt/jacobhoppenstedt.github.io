@@ -5,54 +5,450 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Jacob Hoppenstedt portfolio website" />
   <title>Jacob Hoppenstedt | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="src/style.css" />
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="src/portfolio.js" defer></script>
-  <script src="src/particles-config.js" defer></script>
+  <script src="src/bg-canvas.js" defer></script>
 </head>
 <body>
-  <div id="particles-js" aria-hidden="true"></div>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <header>
-    <a href="index.html" class="logo">Jacob Hoppenstedt</a>
+    <a href="#home" class="logo">jacob.dev</a>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="src/projects.html">Projects</a>
-      <a href="src/resume.html">Resume</a>
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#projects" data-nav="projects">Projects</a>
+      <a href="#resume" data-nav="resume">Resume</a>
     </nav>
+    <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg class="icon-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
   </header>
 
+  <button class="jump-btn" aria-label="Jump to section" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+  </button>
+  <div class="jump-menu" role="menu">
+    <a href="#home" data-nav="home" role="menuitem">Home</a>
+    <a href="#about" data-nav="about" role="menuitem">About</a>
+    <a href="#projects" data-nav="projects" role="menuitem">Projects</a>
+    <a href="#resume" data-nav="resume" role="menuitem">Resume</a>
+  </div>
+
   <main>
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-glow" aria-hidden="true"></div>
 
-<div class="home-img reveal">
-  <div class="home-img-inner">
-    <img src="imgs/1709997612740.jfif" alt="Portrait of Jacob Hoppenstedt" />
-  </div>
-</div>
+      <div class="home-img reveal">
+        <div class="home-img-inner">
+          <img src="imgs/1709997612740.jfif" alt="Portrait of Jacob Hoppenstedt" />
+          <span class="home-img-hud" aria-hidden="true"><span class="rec-dot"></span>REC 00:24</span>
+          <span class="home-img-corner-label" aria-hidden="true">jacob.jpg</span>
+        </div>
+      </div>
 
       <div class="home-content">
-        <p class="eyebrow">Portfolio / Software Engineer</p>
-        <h1>Hi, I'm <span>Jacob</span></h1>
-        <h3 class="typing-text">I'm a <span></span></h3>
-        <p>I'm a cross-platform web and app designer with a passion for making impactful technology.</p>
+        <p class="eyebrow hero-reveal">Portfolio / Software Engineer</p>
+        <h1 class="hero-reveal">Hi, I'm <span>Jacob</span></h1>
+        <h3 class="typing-text hero-reveal">I'm a <span></span></h3>
+        <p class="hero-reveal">I write code for a living, and spend the rest of my time behind a camera or a guitar.</p>
 
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/jacob-hoppenstedt/" aria-label="LinkedIn profile">
-            <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/jacob-hoppenstedt/" aria-label="LinkedIn profile" class="hero-reveal">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <a href="https://www.github.com/JacobHoppenstedt/" aria-label="GitHub profile">
-            <i class="fa-brands fa-github"></i>
+          <a href="https://www.github.com/JacobHoppenstedt/" aria-label="GitHub profile" class="hero-reveal">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           </a>
         </div>
 
-        <a href="src/projects.html" class="btn">My Projects</a>
+        <a href="#projects" class="btn hero-reveal">My Projects</a>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </section>
+
+    <section class="about-page" id="about" aria-labelledby="about-title">
+      <div class="hero">
+        <h2 id="about-title" class="page-title">About</h2>
+        <p class="page-description">
+          The short version of who I am outside a job title.
+        </p>
+      </div>
+
+      <p class="about-lede reveal">
+        I split my time three ways: guitar and production, shooting and editing video, and writing
+        software. All three are really the same instinct, just aimed at different things.
+      </p>
+
+      <div class="facet-list reveal" role="list">
+        <div class="facet-row" role="listitem">
+          <span class="facet-index" aria-hidden="true">01</span>
+          <div>
+            <h3>Music</h3>
+            <p>
+              I play guitar and mess around with recording and mixing, mostly just for myself. I never
+              tried to get good fast, I just kept playing and kept tweaking mixes longer than I probably
+              should.
+            </p>
+          </div>
+          <img class="facet-image" src="imgs/guitar.gif" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+
+        <div class="facet-row" role="listitem">
+          <span class="facet-index" aria-hidden="true">02</span>
+          <div>
+            <h3>Video</h3>
+            <p>
+              I shoot and edit video for fun, usually for friends. Editing is the part I like most,
+              figuring out what to cut so the rest actually lands.
+            </p>
+          </div>
+          <img class="facet-image" src="imgs/camera-spin.gif" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+
+        <div class="facet-row" role="listitem">
+          <span class="facet-index" aria-hidden="true">03</span>
+          <div>
+            <h3>Software</h3>
+            <p>
+              This is the one I do for a living, but it's the same instinct: build something, tweak it,
+              get a little better each time. That's basically why the other two stuck too.
+            </p>
+          </div>
+          <img class="facet-image" src="imgs/internet-webcore.gif" alt="" aria-hidden="true" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-page" id="projects" aria-labelledby="projects-title">
+      <div class="hero">
+        <h2 id="projects-title" class="page-title">My Projects</h2>
+        <p class="page-description">
+          A few projects I have built recently, with the newest ones first.
+        </p>
+      </div>
+
+      <h3 class="section-label">Featured projects</h3>
+      <div class="project-grid" role="list">
+        <article class="project-card featured reveal" role="listitem" data-tilt="true">
+          <span class="project-index" aria-hidden="true"></span>
+          <div class="media">
+            <img src="imgs/canvascommunities.PNG" alt="Canvas Communities homepage and product screenshot" class="project-img" />
+          </div>
+          <div class="content">
+            <div class="topline">
+              <div class="title-wrap">
+                <h2>Canvas Communities</h2>
+                <p>Campus engagement platform</p>
+              </div>
+              <div class="badge-row" aria-label="Project technologies">
+                <span class="badge">React</span>
+                <span class="badge">TypeScript</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">PostgreSQL</span>
+              </div>
+            </div>
+
+            <p>
+              Canvas Communities is a site for discovering and organizing student communities on campus. I worked on the full stack, from the user flow
+              and frontend features to the backend APIs and deployment.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong data-count="157">157</strong>
+                <span>seeded communities ranked dynamically</span>
+              </div>
+              <div class="metric">
+                <strong data-count="113">113</strong>
+                <span>tags used in recommendation scoring</span>
+              </div>
+              <div class="metric">
+                <strong data-count="3">3</strong>
+                <span>services used in deployment</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a href="https://canvas-communities.vercel.app/" target="_blank" rel="noopener" class="btn">View Live</a>
+              <a href="https://github.com/JacobHoppenstedt/CanvasCommunities" target="_blank" rel="noopener" class="btn secondary">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card featured reveal" role="listitem" data-tilt="true">
+          <span class="project-index" aria-hidden="true"></span>
+          <div class="media">
+            <img src="imgs/NormalWeather_Logo.png" alt="NormalWeather game logo and trailer image" class="project-img" />
+          </div>
+          <div class="content">
+            <div class="topline">
+              <div class="title-wrap">
+                <h2>Earthquake‑Preparedness Game</h2>
+                <p>Choice-driven survival game</p>
+              </div>
+              <div class="badge-row" aria-label="Project technologies">
+                <span class="badge">Godot</span>
+                <span class="badge">C#</span>
+                <span class="badge">Web</span>
+                <span class="badge">Desktop</span>
+              </div>
+            </div>
+
+            <p>
+              This game teaches earthquake preparedness through short decisions and immediate feedback. I built the core gameplay systems, handled the
+              feel of the game, and spent time tuning performance so it played well on both web and desktop.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong data-count="25" data-prefix="+" data-suffix="%">+25%</strong>
+                <span>average FPS improvement after optimization</span>
+              </div>
+              <div class="metric">
+                <strong data-count="2">2</strong>
+                <span>platforms shipped: web and desktop</span>
+              </div>
+              <div class="metric">
+                <strong>Core systems</strong>
+                <span>physics, HUD, state management</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <a href="https://www.youtube.com/watch?v=UuZKZ4k4DNM&feature=youtu.be" target="_blank" rel="noopener" class="btn">Watch Trailer</a>
+              <a href="https://github.com/JonKissil/NormalWeather" target="_blank" rel="noopener" class="btn secondary">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h3 class="section-label archive-label">Project archive</h3>
+      <div class="project-grid" role="list">
+        <article class="project-card reveal" role="listitem" data-tilt="true">
+          <span class="project-index" aria-hidden="true"></span>
+          <span class="ribbon" aria-hidden="true">Archived</span>
+          <div class="media">
+            <img src="imgs/prifiteerreadme.png" alt="Profiteer dashboard and financial analytics visualization" class="project-img" />
+          </div>
+          <div class="content">
+            <div class="topline">
+              <div class="title-wrap">
+                <h2>Financial Analytics Platform</h2>
+                <p>Spending and savings dashboard</p>
+              </div>
+              <div class="badge-row" aria-label="Project technologies">
+                <span class="badge">React</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">D3</span>
+                <span class="badge">MERN</span>
+              </div>
+            </div>
+            <p>
+              This app gives a simple view of spending history and savings goals. I worked on the front end, helped shape the charts and layout,
+              and kept the project moving with the rest of the team.
+            </p>
+            <div class="actions">
+              <a href="https://www.github.com/Drewski2222/Profiteer" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" role="listitem" data-tilt="true">
+          <span class="project-index" aria-hidden="true"></span>
+          <span class="ribbon" aria-hidden="true">Archived</span>
+          <div class="media">
+            <img src="imgs/imhungry.JPG" alt="ImHungry recipe suggestion interface" class="project-img" />
+          </div>
+          <div class="content">
+            <div class="topline">
+              <div class="title-wrap">
+                <h2>ImHungry</h2>
+                <p>Recipe discovery app</p>
+              </div>
+              <div class="badge-row" aria-label="Project technologies">
+                <span class="badge">Python</span>
+                <span class="badge">10k+ recipes</span>
+                <span class="badge">Search</span>
+              </div>
+            </div>
+            <p>
+              ImHungry helps users find recipes based on ingredients they already have. I built the recommendation side of the app and focused on
+              keeping the experience simple and useful.
+            </p>
+            <div class="actions">
+              <a href="https://www.github.com/JacobHoppenstedt/ImHungry" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" role="listitem" data-tilt="true">
+          <span class="project-index" aria-hidden="true"></span>
+          <span class="ribbon" aria-hidden="true">Archived</span>
+          <div class="media">
+            <img src="imgs/sweatsmart.png" alt="Sweat Smart workout planning interface" class="project-img" />
+          </div>
+          <div class="content">
+            <div class="topline">
+              <div class="title-wrap">
+                <h2>Sweat Smart</h2>
+                <p>Workout planning app</p>
+              </div>
+              <div class="badge-row" aria-label="Project technologies">
+                <span class="badge">Flutter</span>
+                <span class="badge">Firebase</span>
+                <span class="badge">Mobile</span>
+              </div>
+            </div>
+            <p>
+              Sweat Smart is a workout planner that helps users organize routines and keep track of their fitness data. I worked on the app structure,
+              the interface, and the backend setup with Firebase.
+            </p>
+            <div class="actions">
+              <a href="https://www.github.com/d-dovale/Sweat-Smart" target="_blank" rel="noopener" class="btn">View on GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-page" id="resume" aria-labelledby="resume-title">
+      <div class="hero">
+        <h2 id="resume-title" class="page-title">Resume</h2>
+        <p class="page-description">
+          The full experience, education, and skills breakdown, straight from the source file.
+        </p>
+      </div>
+
+      <div class="terminal reveal">
+        <div class="terminal-bar">
+          <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+          <span class="terminal-title">resume.txt</span>
+        </div>
+
+        <div class="terminal-body">
+          <p class="term-prompt">jacob@dev:~$ cat resume.txt</p>
+
+          <div class="term-block">
+            <p class="term-section">## EDUCATION</p>
+
+            <div class="term-entry">
+              <div class="term-row"><span class="term-org">University of Florida — Gainesville, FL</span></div>
+              <div class="term-row"><span>M.S. in Computer Science</span><span class="term-date">May 2027</span></div>
+              <div class="term-row"><span>B.S. in Computer Science, Minor in Digital Arts and Sciences · GPA 3.89</span><span class="term-date">May 2026</span></div>
+            </div>
+
+            <div class="term-entry">
+              <div class="term-row"><span class="term-org">Kyoto University — Kyoto, Japan</span></div>
+              <div class="term-row"><span>Cross-Cultural Engineering Study Abroad · GPA 4.0</span><span class="term-date">Summer 2025</span></div>
+            </div>
+          </div>
+
+          <div class="term-block">
+            <p class="term-section">## EXPERIENCE</p>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Software Engineer Intern, Trading Technology — Raymond James</strong><span class="term-date">Jun 2026 – Aug 2026</span></div>
+              <p class="term-loc">Saint Petersburg, FL</p>
+              <ul class="term-list">
+                <li>Developed and shipped full-stack features for an advisor trading platform serving 8,000+ financial advisors overseeing $200B+ in assets, using Angular, TypeScript, Java, Spring Boot, and SQL.</li>
+                <li>Resolved 15+ high-impact production issues across frontend, backend, and database layers, improving trade execution reliability and mitigating financial risk.</li>
+                <li>Centralized debugging procedures and technical documentation into a unified engineering knowledge base, streamlining troubleshooting and improving developer productivity.</li>
+              </ul>
+            </div>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Software Engineer Intern — Publix Super Markets</strong><span class="term-date">May 2024 – Jul 2024</span></div>
+              <p class="term-loc">Lakeland, FL</p>
+              <ul class="term-list">
+                <li>Built an automation platform from the ground up using C#, Python, and SQL, improving testing efficiency by 30% and supporting company-wide process automation.</li>
+                <li>Presented the platform to the CEO and senior stakeholders for broader organizational adoption and process improvements.</li>
+                <li>Developed internal tools and Python/SQL utilities that streamlined developer workflows and onboarding.</li>
+              </ul>
+            </div>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Teaching Assistant, Programming Fundamentals — UF Computer Science Dept.</strong><span class="term-date">Aug 2025 – Dec 2025</span></div>
+              <p class="term-loc">Gainesville, FL</p>
+              <ul class="term-list">
+                <li>Taught and mentored a section of 40 students in a 600+ student introductory Python course, leading weekly labs, reviews, and live debugging sessions.</li>
+                <li>Collaborated with instructors to grade assignments, develop exercises, and provided 1:1 technical guidance on problem solving and core programming concepts.</li>
+              </ul>
+            </div>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">AI Humanities Research Assistant — UF Classics Department</strong><span class="term-date">Jan 2024 – May 2025</span></div>
+              <p class="term-loc">Gainesville, FL</p>
+              <ul class="term-list">
+                <li>Developed Python tools for web scraping, AI-powered text analysis, and data processing using Pandas and NumPy to analyze 10,000+ Ancient Greek and Latin texts, integrating results into research workflows and public-facing applications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="term-block">
+            <p class="term-section">## PROJECTS</p>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Canvas Communities — React, TypeScript, Next.js, FastAPI, PostgreSQL, Prisma</strong><span class="term-date">Spring 2026</span></div>
+              <ul class="term-list">
+                <li>Led development of a full-stack campus engagement platform featuring authentication, community management, and personalized recommendation systems.</li>
+                <li>Integrated frontend and backend APIs, deployed the app across Vercel, Render, and Neon, and used hybrid ML recommendation signals to rank 157 seeded communities across 113 tags dynamically.</li>
+              </ul>
+            </div>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Earthquake-Preparedness Game — Godot (C#)</strong><span class="term-date">Summer 2025</span></div>
+              <ul class="term-list">
+                <li>Created a choice-driven earthquake preparedness survival game in Godot in collaboration with Kyoto University, shipping Web and desktop releases for an international educational initiative.</li>
+                <li>Built gameplay systems including physics, inventory, HUD, and state management, improving average FPS by 25% through performance optimization and iterative playtesting.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="term-block">
+            <p class="term-section">## LEADERSHIP</p>
+
+            <div class="term-entry">
+              <div class="term-row"><strong class="term-role">Secretary, Social Lead — UF Association for Computing Machinery</strong><span class="term-date">Aug 2023 – May 2025</span></div>
+              <ul class="term-list">
+                <li>Led initiatives to strengthen member engagement and community culture within a 2,000+ member organization by organizing social, professional, and technical events.</li>
+                <li>Coordinated workshops, guest speakers, and a multi-organization internship applyathon that increased participation and helped multiple members secure internships.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="term-block">
+            <p class="term-section">## SKILLS</p>
+            <div class="term-skill-row"><span class="term-skill-label">Languages</span><span>Python, C/C++, Java, HTML/CSS, JavaScript, TypeScript, C#, SQL</span></div>
+            <div class="term-skill-row"><span class="term-skill-label">Frameworks/Tools</span><span>Node.js, Spring Boot, AWS, Express, Tailwind, Firebase, MongoDB, Postman, SonarQube, Docker, PyTorch</span></div>
+          </div>
+
+          <p class="term-prompt-end">jacob@dev:~$ <span class="term-cursor" aria-hidden="true">_</span></p>
+        </div>
+
+        <div class="terminal-actions">
+          <a href="imgs/Jacob_Hoppenstedt_resume.pdf" download="JacobHoppenstedt_resume.pdf" class="btn">Download PDF</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <p>
+      Reach me at
+      <a href="mailto:jacobhoppenstedt@gmail.com?subject=Hi%20Jacob%20—%20from%20your%20portfolio">jacobhoppenstedt@gmail.com</a>
+    </p>
+    <p>
+      Or connect on
+      <a href="https://www.linkedin.com/in/jacob-hoppenstedt">LinkedIn</a>
+      ·
+      <a href="https://github.com/JacobHoppenstedt">GitHub</a>
+    </p>
+  </footer>
 </body>
 </html>
