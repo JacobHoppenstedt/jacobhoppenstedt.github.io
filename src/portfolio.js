@@ -47,31 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     spySections.forEach((section) => spyObserver.observe(section));
   }
 
-  const jumpBtn = document.querySelector(".jump-btn");
-  const jumpMenu = document.querySelector(".jump-menu");
-
-  if (jumpBtn && jumpMenu) {
-    setTimeout(() => jumpBtn.classList.add("is-visible"), 1000);
-
-    const closeJumpMenu = () => {
-      jumpMenu.classList.remove("is-open");
-      jumpBtn.setAttribute("aria-expanded", "false");
-    };
-
-    jumpBtn.addEventListener("click", () => {
-      const isOpen = jumpMenu.classList.toggle("is-open");
-      jumpBtn.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    jumpMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeJumpMenu));
-
-    document.addEventListener("click", (event) => {
-      if (!jumpMenu.contains(event.target) && !jumpBtn.contains(event.target)) {
-        closeJumpMenu();
-      }
-    });
-  }
-
   const scrollHint = document.querySelector(".scroll-hint");
   if (scrollHint) {
     const showTimer = setTimeout(() => scrollHint.classList.add("is-visible"), 3000);
@@ -240,17 +215,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (homeSection) {
-    const heroReveal = homeSection.querySelectorAll(".hero-reveal");
-    if (prefersReducedMotion) {
-      heroReveal.forEach((el) => el.classList.remove("hero-reveal"));
-    } else {
-      heroReveal.forEach((el, i) => {
-        setTimeout(() => {
-          el.classList.add("is-visible");
-          setTimeout(() => el.classList.remove("hero-reveal"), 650);
-        }, 120 + i * 90);
-      });
-    }
-  }
 });
